@@ -4,7 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hiring Solutions - Expert Recruitment Services</title>
-    <link rel="stylesheet" href="style.css"> <!-- You'll create this CSS file separately -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Added CSS for contact info display */
+        .contact-info {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -14,7 +29,8 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <!-- Contact Link with ID for JavaScript targeting -->
+                <li><a id="contact-link" href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -69,5 +85,26 @@
         </ul>
     </footer>
 
+    <!-- Contact Information Display -->
+    <div class="contact-info" id="contact-info">
+        <h3>Contact Information</h3>
+        <p><strong>Name:</strong> Haziq Amjad</p>
+        <p><strong>Mobile Number:</strong> +923238812255</p>
+        <p><strong>Email ID:</strong> <a href="mailto:haziqamjad51@gmail.com">haziqamjad51@gmail.com</a></p>
+        <button id="close-contact">Close</button>
+    </div>
+
+    <script>
+        // JavaScript for toggling contact info display
+        document.getElementById('contact-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            document.getElementById('contact-info').style.display = 'block';
+        });
+
+        document.getElementById('close-contact').addEventListener('click', function() {
+            document.getElementById('contact-info').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
+
